@@ -33,10 +33,14 @@ export default function Headers() {
           {links?.map((link) => (
             <Link
               target={link.target}
+              key={link.href}
               href={link.href}
-              className={`${pathName == link.href ? "font-normal" : ""} `}
+              className={`${
+                pathName == link.href ? "font-normal" : ""
+              } group transition duration-300`}
             >
               {link.text}
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-slate-300"></span>
             </Link>
           ))}
         </div>
