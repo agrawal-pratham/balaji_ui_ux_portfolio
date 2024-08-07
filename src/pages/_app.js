@@ -20,9 +20,7 @@ export default function App({ Component, pageProps }) {
   return (
     <main className={` ${lato.variable} ${montserrat.variable} font-lato`}>
       <Headers />
-      <section className="container pt-20 mx-auto">
-        <Component {...pageProps} />
-      </section>
+      <Component {...pageProps} />
       <Footer />
     </main>
   );

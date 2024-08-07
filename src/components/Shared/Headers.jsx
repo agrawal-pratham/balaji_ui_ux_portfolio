@@ -23,7 +23,7 @@ export default function Headers() {
   ];
 
   return (
-    <div className=" w-svw fixed py-4 px-8 bg-black text-white">
+    <div className=" w-svw fixed py-4 px-8 bg-black text-white z-50 top-0">
       <nav className="flex justify-between">
         <Link href="/" className="text-xl font-light ">
           Balaji UXUI
