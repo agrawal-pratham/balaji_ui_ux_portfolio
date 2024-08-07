@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className={`py-6 bg-[#323232] text-white`}>
-      <section className="container mx-auto flex items-center justify-between">
+      <section className="container px-6 mx-auto flex flex-col gap-16 md:flex-row items-center justify-between">
         <p className="font-montserrat self-start text-lg font-medium">
           Don’t forget to smile
         </p>
@@ -41,7 +41,7 @@ export default function Footer() {
               key={link.title}
               className="border rounded-md p-2 hover:scale-110 transition-all duration-200"
             >
-              {<link.icon className="text-3xl" />}
+              {<link.icon className="text-4xl" />}
             </Link>
           ))}
         </div>
