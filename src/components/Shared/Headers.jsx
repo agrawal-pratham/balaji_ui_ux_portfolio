@@ -34,11 +34,7 @@ export default function Headers() {
             <Link
               target={link.target}
               href={link.href}
-              className={`${
-                pathName == link.href
-                  ? "font-medium text-lg leading-none"
-                  : "leading-none"
-              } `}
+              className={`${pathName == link.href ? "font-normal" : ""} `}
             >
               {link.text}
             </Link>
