@@ -1,5 +1,4 @@
-import Footer from "@/components/Shared/Footer";
-import Headers from "@/components/Shared/Headers";
+import Layout from "@/components/Shared/Layout";
 import "@/styles/globals.css";
 import { Lato, Montserrat } from "next/font/google";
 
@@ -19,9 +18,9 @@ const montserrat = Montserrat({
 export default function App({ Component, pageProps }) {
   return (
     <main className={` ${lato.variable} ${montserrat.variable} font-lato`}>
-      <Headers />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </main>
   );
 }
