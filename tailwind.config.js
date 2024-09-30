@@ -8,8 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "bg-color":
-          "radial-gradient(50% 50% at 50% 50%, rgb(26, 26, 26) 0%, rgb(0, 0, 0) 100%);",
+        "bg-color": "#191919",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -17,6 +16,12 @@ module.exports = {
       fontFamily: {
         lato: "var(--font-lato)",
         montserrat: "var(--font-montserrat)",
+      },
+      colors: {
+        active: "#2C6FFF",
+        inactive: "#9F9FAD",
+        "bg-color": "#191919",
+        "border-color": "#343434",
       },
     },
   },

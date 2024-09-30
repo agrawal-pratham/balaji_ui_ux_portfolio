@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="preload" href="/images/clouds_bg.webp" as="image" />
+        <link rel="preload" href="/images/cloud_bg.jpg" as="image" />
         {/* <link rel="preload" href="/images/clouds_bg.png" as="image" /> */}
         <link rel="preload" href="/images/letter_b.png" as="image" />
         <link rel="preload" href="/images/letter_a.png" as="image" />
