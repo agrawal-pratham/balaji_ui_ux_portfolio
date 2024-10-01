@@ -33,8 +33,8 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="fixed flex justify-center items-end w-full  bottom-5 z-20 text-white">
-      <div className="mx-3 flex h-full w-fit min-w-0 items-center gap-[10px] rounded-[20px] border-y-[0.075rem] border-[#404040b1] bg-[#00000051]  backdrop-blur-[15px] transition-all px-4 pt-3 pb-1 duration-200 ease-[cubic-bezier(0.22, 1, 0.36, 1)]  overflow-visible">
+    <nav className="fixed flex justify-center items-end w-full  bottom-5 z-50 text-white bg-transparent">
+      <div className="flex h-full min-w-0 items-center gap-2 rounded-[20px] border-y-[0.075rem] border-[#404040b1] bg-[#00000051] bg-opacity-5 backdrop-blur-sm px-4 pt-3 pb-1">
         <nav className="flex justify-between">
           <div className="font-light flex gap-4 items-center">
             {links?.map((link) => {
@@ -47,13 +47,13 @@ export default function NavBar() {
                   className={`${isActive ? "fill-active" : "fill-inactive"} 
                 group transition duration-300 flex items-center flex-col gap-1 `}
                 >
-                  <div className="h-11 w-11 flex items-center justify-center rounded-lg bg-bg-color">
+                  <div className="min-h-11 min-w-11 flex items-center justify-center rounded-lg bg-bg-color">
                     {link.icon}
                   </div>
                   <span
                     className={`block transition-all duration-500 font-medium border-border-color text-sm ${
                       isActive ? "text-active" : " text-inactive"
-                    } rounded-sm  opacity-0 group-hover:opacity-100 bg-bg-color px-2 py-1 -top-9 fixed`}
+                    } rounded-sm  opacity-0 group-hover:md:opacity-100 bg-bg-color px-2 py-1 -top-9 fixed`}
                   >
                     {link.text}
                   </span>

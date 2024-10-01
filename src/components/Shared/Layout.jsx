@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 const LineAnimation = ({ position, delay }) => {
   return (
     <motion.div
-      className="absolute top-0 bottom-0 w-px bg-white opacity-10"
+      className="fixed top-0 bottom-0 w-px bg-white opacity-10"
       style={{ left: `${position}%` }}
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
@@ -16,7 +16,6 @@ const LineAnimation = ({ position, delay }) => {
 
 export default function Layout({ children }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [linesAnimationComplete, setLinesAnimationComplete] = useState(false);
 
   useEffect(() => {
     const img = new Image();
@@ -29,15 +28,10 @@ export default function Layout({ children }) {
     animate: { scale: 1 },
   };
 
-  const contentVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
-
   return (
-    <div className="min-h-screen relative overflow-hidden bg-color">
+    <div className="min-h-screen relative">
       <motion.div
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="fixed inset-0 bg-cover bg-center z-0"
         style={{
           backgroundImage: "url('/images/cloud_bg.jpg')",
         }}
@@ -45,27 +39,25 @@ export default function Layout({ children }) {
         initial="initial"
         animate="animate"
         transition={{ duration: 1, ease: "easeOut" }}
-        onAnimationComplete={() => setLinesAnimationComplete(true)}
       />
-
-      {imageLoaded && linesAnimationComplete && (
+      {imageLoaded && (
         <>
-          <div className="w-svw h-svh backdrop-blur-[1px] transition-all duration-500">
+          <div className="fixed inset-0 backdrop-blur-[1px] transition-all duration-500 z-10">
             {[16.67, 33.33, 50, 66.67, 83.33].map((position, i) => (
-              <LineAnimation key={i} position={position} delay={i * 0.2} />
+              <LineAnimation key={i} position={position} delay={i * 0.2 + 1} />
             ))}
           </div>
-          <motion.main
-            className="relative z-10"
-            variants={contentVariants}
-            initial="initial"
-            animate="animate"
+          <motion.div
+            className="relative z-20 min-h-screen"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 3 }}
           >
             {children}
-          </motion.main>
+          </motion.div>
           <motion.div
-            initial={{ y: "calc(100vh - 1%)" }}
+            className="fixed bottom-0 left-0 right-0 z-30"
+            initial={{ y: "calc(100vh - 5%)" }}
             animate={{ y: "100%" }}
             transition={{ duration: 2 }}
           >
