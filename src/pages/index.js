@@ -11,12 +11,20 @@ export default function Home() {
     "/images/letter_i.png",
   ];
 
+  const marqueeText = [
+    "Competitor research and user identification",
+    "Gathering requirements and ideation",
+    "Wireframing and creating design systems",
+    "Designing UI screens and providing continuous maintenance during production",
+  ];
+
   return (
     <>
       <Head>
-        <title>Balaji UXUI</title>
+        {/* <title>Balaji UXUI</title> */}
+        <title>Animations</title>
       </Head>
-      <section className="flex h-screen items-center justify-center text-white relative">
+      <section className="flex h-screen items-center justify-center text-white relative transition-all duration-1000">
         <motion.div
           className="absolute w-64 h-64 rounded-full border border-white opacity-10"
           initial={{ scale: 0 }}
@@ -63,14 +71,31 @@ export default function Home() {
               designer for Slato, an In-house e-learning mobile app
             </motion.div>
           </p>
-          {/* <div className="flex justify-center space-x-4">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded">
-              Competitor research and user identification
-            </button>
-            <button className="bg-gray-700 text-white px-4 py-2 rounded">
-              Gat
-            </button>
-          </div> */}
+          <div className="">
+            <div class="relative w-[340px] bg-[#0000000a] backdrop-blur-3xl animate-increase-width rounded-full border border-opacity-10 px-1 py-2 border-white flex overflow-x-hidden">
+              <div class="animate-marquee whitespace-nowrap">
+                {marqueeText?.map((e, i) => (
+                  <>
+                    <span class="text-active">✧</span>
+                    <span key={i} class="text-md mx-2">
+                      {e}
+                    </span>
+                  </>
+                ))}
+              </div>
+
+              <div class="absolute animate-marquee2 whitespace-nowrap">
+                {marqueeText?.map((e, i) => (
+                  <>
+                    <span class="text-active">✧</span>
+                    <span key={i} class="text-md mx-2">
+                      {e}
+                    </span>
+                  </>
+                ))}
+              </div>
+            </div>
+          </div>
           <p className="mt-6 italic">
             <motion.div
               initial={{ opacity: 0 }}

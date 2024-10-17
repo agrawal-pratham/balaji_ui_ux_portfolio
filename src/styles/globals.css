@@ -10,7 +10,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 /* width */
 ::-webkit-scrollbar {
   border-radius: 100px;

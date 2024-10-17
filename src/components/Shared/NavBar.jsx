@@ -47,7 +47,7 @@ export default function NavBar() {
                   className={`${isActive ? "fill-active" : "fill-inactive"} 
                 group transition duration-300 flex items-center flex-col gap-1 `}
                 >
-                  <div className="min-h-11 min-w-11 flex items-center justify-center rounded-lg bg-bg-color">
+                  <div className="min-h-11 min-w-11 flex items-center justify-center cursor-pointer rounded-lg bg-bg-color">
                     {link.icon}
                   </div>
                   <span

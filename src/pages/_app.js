@@ -10,7 +10,7 @@ const spline_sans_mono = Spline_Sans_Mono({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={` ${spline_sans_mono.variable} font-lato`}>
+    <main className={` ${spline_sans_mono.variable} font-lato cursor-default`}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
